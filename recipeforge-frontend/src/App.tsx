@@ -1,24 +1,35 @@
 import { useState, useEffect } from 'react';
 
-function App() {
-  const [recipeCount, setRecipeCount] = useState<number | null>(null);
+type Recipe = {
+    recipeId: number;
+    recipeTitle: string;
+    recipeServings: number;
+};
 
-  useEffect(() => {
-    fetch('/api/recipes/count')
-        .then(response => response.json())
-        .then(data => setRecipeCount(data));
-  }, []);
+function App() {
+    const [recipeList, setRecipes] = useState<Recipe[]>([]);
+
+    useEffect(() => {
+        fetch('/api/recipes')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                setRecipes(data);
+            });
+    }, []);
 
   return (
       <main>
         <h1>RecipeForge</h1>
         <p>Your personal recipe collection.</p>
 
-        <p>
-          {recipeCount === null
-              ? 'Loading recipes...'
-              : `You have ${recipeCount} recipes!`}
-        </p>
+          {recipeList.map(recipe => (
+              <div key={recipe.recipeId}>
+                  <h2>{recipe.recipeTitle}</h2>
+                  <p>Servings: {recipe.recipeServings}</p>
+              </div>
+          ))}
+
       </main>
   );
 }

@@ -1,6 +1,6 @@
 package com.drewweise.recipeforge.user;
 
-import com.drewweise.recipeforge.recipe.Recipe;
+import com.drewweise.recipeforge.recipe.model.Recipe;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;

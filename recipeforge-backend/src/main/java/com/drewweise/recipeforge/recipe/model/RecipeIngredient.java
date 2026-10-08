@@ -1,4 +1,4 @@
-package com.drewweise.recipeforge.recipe;
+package com.drewweise.recipeforge.recipe.model;
 
 import com.drewweise.recipeforge.ingredient.Ingredient;
 import jakarta.persistence.*;
