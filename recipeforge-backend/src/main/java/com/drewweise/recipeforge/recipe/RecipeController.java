@@ -13,14 +13,13 @@ public class RecipeController {
     public RecipeController(RecipeRepository recipeRepository) {
         this.recipeRepository = recipeRepository;
     }
-
-    @GetMapping
-    public String getRecipes() {
-        return "Hello from RecipeForge!";
-    }
-
+    
     @GetMapping("/count")
     public long countRecipes() {
         return recipeRepository.count();
     }
+
+    @GetMapping()
+    public
+
 }
