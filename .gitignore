@@ -1,0 +1,20 @@
+# IntelliJ
+.idea/
+.run/
+*.iml
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Build output
+target/
+node_modules/
+dist/
+
+# Logs
+*.log
+
+# macOS
+.DS_Store
